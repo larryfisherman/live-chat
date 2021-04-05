@@ -1,0 +1,46 @@
+.sidebarMessage {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+  min-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+.sidebarMessage:hover {
+  background-color: lightblue;
+  color: white;
+}
+
+.sidebarchat__info {
+  margin-left: 15px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.sidebarchat__info > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebarchat__info > small {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.sidebar__messages {
+  overflow-y: scroll;
+}
+
+.sidebar__messages::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar_messages {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
