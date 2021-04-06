@@ -5,7 +5,6 @@
   width: fit-content;
   justify-content: space-between;
   margin: 15px;
-  width: 95%;
 }
 
 .message > p {
@@ -16,6 +15,7 @@
   border-radius: 20px;
   margin: 10px;
   margin-right: auto;
+  max-width: 850px;
   white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
@@ -32,4 +32,22 @@
   font-size: 8px;
   bottom: -5px;
   left: 0;
+}
+
+.message__sender {
+  margin-left: auto;
+}
+
+.message__photo {
+  order: 0;
+}
+
+.message__sender > .message__photo {
+  order: 1;
+  margin: 15px;
+}
+
+.message__sender > p {
+  background: rgb(18, 74, 158);
+  color: white;
 }

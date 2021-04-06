@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setChat } from "../../../store/chatSlice";
 import { selectUser } from "../../../store/userSlice";
 import db from "../../../firebase/firebase";
+import moment from "moment";
 
 function SidebarMessage({ id, chatName }) {
   const dispatch = useDispatch();
@@ -32,13 +33,16 @@ function SidebarMessage({ id, chatName }) {
             chatName,
           })
         );
+        console.log(chatDetails);
       }}
     >
-      <Avatar />
+      <Avatar src={chatDetails[0]?.photo} />
       <div className="sidebarchat__info">
         <h4>{chatName} </h4>
         <small>
-          {new Date(chatDetails[0]?.timestamp?.toDate()).toLocaleString()}
+          {moment()
+            .startOf(new Date(chatDetails[0]?.timestamp?.toDate()))
+            .fromNow()}
         </small>
         <p>{chatDetails[0]?.message}</p>
       </div>
