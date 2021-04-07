@@ -11,6 +11,8 @@ import db, { auth } from "../../firebase/firebase";
 function Sidebar() {
   const user = useSelector(selectUser);
   const [chats, setChats] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+
   useEffect(() => {
     db.collection("chats").onSnapshot((snapshot) => {
       setChats(
@@ -40,7 +42,12 @@ function Sidebar() {
           className="sidebar__headerAvatar"
         />
         <div className="sidebar__input">
-          <input placeholder="Search" />
+          <input
+            placeholder="Search"
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+            }}
+          />
           <SearchIcon />
         </div>
         <IconButton variant="outlined" className="sidebar__inputButton">
@@ -48,9 +55,11 @@ function Sidebar() {
         </IconButton>
       </div>
       <div className="sidebar__messages">
-        {chats.map(({ id, chatName }) => (
-          <SidebarMessage key={id} id={id} chatName={chatName.chatName} />
-        ))}
+        {chats
+          .filter(({ chatName }) => chatName.chatName.includes(searchInput))
+          .map(({ id, chatName }) => (
+            <SidebarMessage key={id} id={id} chatName={chatName.chatName} />
+          ))}
       </div>
     </div>
   );

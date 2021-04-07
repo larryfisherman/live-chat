@@ -63,7 +63,7 @@ function Chat() {
       <div className="chat__messageInput">
         <form>
           <input
-            placeholder="Message"
+            placeholder={"Message"}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             disabled={!chatId}

@@ -5,6 +5,7 @@
   height: 100vh;
   background-color: rgb(243, 243, 243);
   border-right: 1px solid lightgray;
+  max-width: 400px;
 }
 
 .sidebar__header {
