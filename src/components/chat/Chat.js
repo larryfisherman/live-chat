@@ -34,7 +34,6 @@ function Chat() {
   }, [chatId]);
 
   const sendMessage = (e) => {
-    console.log(inputValue, user);
     e.preventDefault();
     db.collection("chats").doc(chatId).collection("messages").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -61,7 +60,7 @@ function Chat() {
         </FlipMove>
       </div>
       <div className="chat__messageInput">
-        <form>
+        <form onSubmit={sendMessage}>
           <input
             placeholder={"Message"}
             value={inputValue}
@@ -71,7 +70,6 @@ function Chat() {
           <button
             type="submit"
             className="chat__messageInputButton"
-            onClick={sendMessage}
             disabled={!chatId}
           ></button>
         </form>
