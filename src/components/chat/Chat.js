@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./Chat.css";
 import Message from "./Message";
 import db from "../../firebase/firebase";
@@ -7,10 +7,12 @@ import firebase from "firebase";
 import "firebase/firestore";
 import { selectChatId, selectChatName } from "../../store/chatSlice";
 import { selectUser } from "../../store/userSlice";
+import { setHamburgerClass } from "../../store/chatSlice";
 import FlipMove from "react-flip-move";
 
 function Chat() {
   const [inputValue, setInputValue] = useState("");
+  const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const chatId = useSelector(selectChatId);
   const chatName = useSelector(selectChatName);
@@ -34,6 +36,14 @@ function Chat() {
     }
   }, [chatId]);
 
+  useEffect(() => {
+    dispatch(
+      setHamburgerClass({
+        hamburgerClass: toggleButton,
+      })
+    );
+  }, [toggleButton]);
+
   const sendMessage = (e) => {
     e.preventDefault();
     db.collection("chats").doc(chatId).collection("messages").add({
@@ -53,7 +63,9 @@ function Chat() {
           To: <span className="chat__userName">{chatName}</span>
         </h4>
         <button
-          onClick={() => setToggleButton(!toggleButton)}
+          onClick={() => {
+            setToggleButton(!toggleButton);
+          }}
           className={
             !toggleButton
               ? "chat__headerHamburger"

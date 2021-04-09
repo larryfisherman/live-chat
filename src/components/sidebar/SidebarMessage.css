@@ -46,3 +46,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@media (max-width: 760px) {
+  .sidebarMessage {
+    border-bottom: 1px solid lightgray;
+  }
+}

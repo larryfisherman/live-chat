@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../store/userSlice";
+import { hamburgerMenu } from "../../store/chatSlice";
 import "./Sidebar.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
@@ -10,6 +11,7 @@ import db, { auth } from "../../firebase/firebase";
 
 function Sidebar() {
   const user = useSelector(selectUser);
+  const hamburgerMenuToggle = useSelector(hamburgerMenu);
   const [chats, setChats] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
@@ -33,8 +35,9 @@ function Sidebar() {
     }
   };
 
+  console.log(hamburgerMenuToggle);
   return (
-    <div className="sidebar">
+    <div className={hamburgerMenuToggle ? null : "sidebar"}>
       <div className="sidebar__header">
         <Avatar
           src={user.photo}
