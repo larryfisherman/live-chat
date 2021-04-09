@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./SidebarMessage.css";
 import { Avatar } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { setChat } from "../../../store/chatSlice";
-import db from "../../../firebase/firebase";
+import { setChat } from "../../store/chatSlice";
+import db from "../../firebase/firebase";
 import * as timeago from "timeago.js";
 
 function SidebarMessage({ id, chatName }) {

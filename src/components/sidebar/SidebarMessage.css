@@ -22,6 +22,8 @@
   overflow: hidden;
 }
 .sidebarchat__info > p {
+  width: 250px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }

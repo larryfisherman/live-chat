@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./Chat.css";
-import Message from "./message/Message";
+import Message from "./Message";
 import db from "../../firebase/firebase";
 import firebase from "firebase";
 import "firebase/firestore";
@@ -15,6 +15,7 @@ function Chat() {
   const chatId = useSelector(selectChatId);
   const chatName = useSelector(selectChatName);
   const [messages, setMessages] = useState([]);
+  const [toggleButton, setToggleButton] = useState(false);
 
   useEffect(() => {
     if (chatId) {
@@ -51,6 +52,18 @@ function Chat() {
         <h4>
           To: <span className="chat__userName">{chatName}</span>
         </h4>
+        <button
+          onClick={() => setToggleButton(!toggleButton)}
+          className={
+            !toggleButton
+              ? "chat__headerHamburger"
+              : "chat__headerHamburger chat__headerHamburger--active"
+          }
+        >
+          <span className="hamburger__box">
+            <span className="hamburger__inner"></span>
+          </span>
+        </button>
       </div>
       <div className="chat__messages">
         <FlipMove>

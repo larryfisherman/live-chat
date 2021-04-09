@@ -3,7 +3,8 @@
   flex-direction: column;
   flex: 0.85;
   height: 100vh;
-  width: 200%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .chat__header {
@@ -12,11 +13,70 @@
   background-color: rgb(243, 243, 243);
   padding: 20px;
   border-bottom: 1px solid lightgray;
+  width: 100%;
 }
 
 .chat__header > h4 {
   color: grey;
   font-weight: 500;
+}
+
+.chat__headerHamburger {
+  padding: 5px;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin-right: 50px;
+  margin-bottom: -10px;
+}
+
+.hamburger__box {
+  display: flex;
+  width: 30px;
+  height: 35px;
+  position: relative;
+}
+
+.hamburger__inner {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s 0.1s linear;
+}
+
+.hamburger__inner::before,
+.hamburger__inner::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  left: 0;
+  background-color: black;
+  position: absolute;
+}
+.hamburger__inner::before {
+  top: -10px;
+}
+
+.hamburger__inner::after {
+  top: 10px;
+}
+
+.chat__headerHamburger--active .hamburger__inner {
+  background-color: transparent;
+}
+
+.chat__headerHamburger--active .hamburger__inner::before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.chat__headerHamburger--active .hamburger__inner::after {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 .chat__userName {
@@ -60,4 +120,13 @@
 
 .chat__messageInputButton {
   display: none;
+}
+
+@media (max-width: 760px) {
+  .chat {
+    flex: 1;
+  }
+  .chat__headerHamburger {
+    display: flex;
+  }
 }

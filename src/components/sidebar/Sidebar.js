@@ -5,7 +5,7 @@ import "./Sidebar.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import RateReviewIcon from "@material-ui/icons/RateReview";
-import SidebarMessage from "./sidebarMessage/SidebarMessage";
+import SidebarMessage from "./SidebarMessage";
 import db, { auth } from "../../firebase/firebase";
 
 function Sidebar() {
