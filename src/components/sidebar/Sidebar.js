@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../store/userSlice";
 import { hamburgerMenu } from "../../store/chatSlice";
-import "./Sidebar.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import RateReviewIcon from "@material-ui/icons/RateReview";

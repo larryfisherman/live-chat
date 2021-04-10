@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "./Chat.css";
 import Message from "./Message";
 import db from "../../firebase/firebase";
 import firebase from "firebase";
@@ -72,8 +71,8 @@ function Chat() {
               : "chat__headerHamburger chat__headerHamburger--active"
           }
         >
-          <span className="hamburger__box">
-            <span className="hamburger__inner"></span>
+          <span className="hamburgerBox">
+            <span className="hamburgerBox__inner"></span>
           </span>
         </button>
       </div>

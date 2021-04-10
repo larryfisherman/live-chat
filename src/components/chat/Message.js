@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { useSelector } from "react-redux";
-import "./Message.css";
+
 import { Avatar } from "@material-ui/core";
 import { selectUser } from "../../store/userSlice";
 

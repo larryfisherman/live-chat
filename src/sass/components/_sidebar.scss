@@ -1,0 +1,50 @@
+.sidebar {
+  display: flex;
+  flex: 0.25;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(243, 243, 243);
+  border-right: 1px solid lightgray;
+
+  &__header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: lightgray;
+    flex: 1;
+    border-radius: 5px;
+    margin-left: 15px;
+
+    & > input {
+      background: transparent;
+      outline-width: 0;
+      border: none;
+      width: 100%;
+    }
+  }
+
+  .mobileSidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(243, 243, 243);
+    border-right: 1px solid lightgray;
+  }
+
+  @media (max-width: 740px) {
+    & {
+      display: none;
+    }
+    &__input {
+      display: none;
+    }
+  }
+}

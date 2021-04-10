@@ -1,0 +1,53 @@
+.message {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  justify-content: space-between;
+  margin: 15px;
+
+  & > p {
+    display: flex;
+    background-color: lightgray;
+    font-size: medium;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-right: auto;
+    max-width: 850px;
+    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: pre-wrap; /* css-3 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  & > small {
+    color: gray;
+    position: absolute;
+    font-size: 8px;
+    bottom: -5px;
+    left: 0;
+  }
+
+  &__sender {
+    margin-left: auto;
+
+    & > p {
+      background: rgb(18, 74, 158);
+      color: white;
+    }
+
+    & > .message_photo {
+      order: 1;
+      margin: 15px;
+    }
+  }
+
+  &__photo {
+    order: 0;
+  }
+}
