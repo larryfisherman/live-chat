@@ -36,8 +36,9 @@ function Sidebar() {
   };
 
   console.log(hamburgerMenuToggle);
+
   return (
-    <div className={hamburgerMenuToggle ? null : "sidebar"}>
+    <div className={hamburgerMenuToggle ? "mobileSidebar" : "sidebar"}>
       <div className="sidebar__header">
         <Avatar
           src={user.photo}

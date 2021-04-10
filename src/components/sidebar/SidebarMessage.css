@@ -4,7 +4,6 @@
   padding: 20px;
   border-bottom: 1px solid lightgray;
   cursor: pointer;
-  min-width: 200px;
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 350px;
@@ -49,6 +48,10 @@
 
 @media (max-width: 760px) {
   .sidebarMessage {
-    border-bottom: 1px solid lightgray;
+    border: none;
+    justify-content: center;
+  }
+  .sidebarchat__info {
+    display: none;
   }
 }
